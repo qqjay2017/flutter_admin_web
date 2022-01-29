@@ -4,17 +4,17 @@ import 'package:flutter_web_dashboard/widgets/horizontal_menu_item.dart';
 import 'package:flutter_web_dashboard/widgets/vertical_menu_item.dart';
 
 class SideMenuItem extends StatelessWidget {
-  final String itenName;
+  final String itemName;
   final void Function()? onTap;
-  const SideMenuItem({Key? key, required this.itenName, this.onTap})
+  const SideMenuItem({Key? key, required this.itemName, this.onTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     if (ResponsiveWidget.isCustomScreen(context)) {
-      return VerticalMenuItem(itenName: itenName, onTap: onTap);
+      return VerticalMenuItem(itemName: itemName, onTap: onTap);
     }
 
-    return HorizontalMenuItem(itenName: itenName, onTap: onTap);
+    return HorizontalMenuItem(itemName: itemName, onTap: onTap);
   }
 }

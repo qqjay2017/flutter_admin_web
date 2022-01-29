@@ -8,36 +8,36 @@ class MenuController extends GetxController {
   var activeItem = OverViewPageRoute.obs;
   var hoverItem = ''.obs;
 
-  changeActiveitemTo(String itenName) {
-    activeItem.value = itenName;
+  changeActiveitemTo(String itemName) {
+    activeItem.value = itemName;
   }
 
-  onHover(String itenName) {
-    if (!isActive(itenName)) {
-      hoverItem.value = itenName;
+  onHover(String itemName) {
+    if (!isActive(itemName)) {
+      hoverItem.value = itemName;
     }
   }
 
-  isActive(String itenName) => activeItem.value == itenName;
-  isHovering(String itenName) => hoverItem.value == itenName;
+  isActive(String itemName) => activeItem.value == itemName;
+  isHovering(String itemName) => hoverItem.value == itemName;
 
-  Widget returnIconFor(String itenName) {
-    switch (itenName) {
+  Widget returnIconFor(String itemName) {
+    switch (itemName) {
       case OverViewPageRoute:
-        return _customIcon(Icons.trending_up, itenName);
+        return _customIcon(Icons.trending_up, itemName);
       case DriversPageRoute:
-        return _customIcon(Icons.drive_eta, itenName);
+        return _customIcon(Icons.drive_eta, itemName);
       case ClientsiewPageRoute:
-        return _customIcon(Icons.people_alt_outlined, itenName);
+        return _customIcon(Icons.people_alt_outlined, itemName);
       case AuthenticationPageRoute:
-        return _customIcon(Icons.exit_to_app, itenName);
+        return _customIcon(Icons.exit_to_app, itemName);
       default:
-        return _customIcon(Icons.exit_to_app, itenName);
+        return _customIcon(Icons.exit_to_app, itemName);
     }
   }
 
-  Widget _customIcon(IconData icon, String itenName) {
-    if (isActive(itenName)) {
+  Widget _customIcon(IconData icon, String itemName) {
+    if (isActive(itemName)) {
       return Icon(
         icon,
         size: 22,
@@ -47,7 +47,7 @@ class MenuController extends GetxController {
     return Icon(
       icon,
       size: 22,
-      color: isHovering(itenName) ? darke : lightGrey,
+      color: isHovering(itemName) ? darke : lightGrey,
     );
   }
 }

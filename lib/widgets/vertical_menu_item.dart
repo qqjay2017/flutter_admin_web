@@ -6,10 +6,10 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'custom_text.dart';
 
 class VerticalMenuItem extends StatelessWidget {
-  final String itenName;
+  final String itemName;
   final void Function()? onTap;
   const VerticalMenuItem(
-      {Key? key, required this.itenName, required this.onTap})
+      {Key? key, required this.itemName, required this.onTap})
       : super(key: key);
 
   @override
@@ -19,17 +19,17 @@ class VerticalMenuItem extends StatelessWidget {
       onTap: onTap,
       onHover: (value) {
         value
-            ? menuController.onHover(itenName)
+            ? menuController.onHover(itemName)
             : menuController.onHover('not hovering');
       },
       child: Obx(() => Container(
-            color: menuController.isHovering(itenName)
+            color: menuController.isHovering(itemName)
                 ? lightGrey.withOpacity(.1)
                 : Colors.transparent,
             child: Row(
               children: [
                 Visibility(
-                  visible: menuController.isHovering(itenName),
+                  visible: menuController.isHovering(itemName),
                   child: Container(
                     child: Container(
                       width: 6,
@@ -47,13 +47,13 @@ class VerticalMenuItem extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.all(16),
-                      child: menuController.returnIconFor(itenName),
+                      child: menuController.returnIconFor(itemName),
                     ),
-                    if (!menuController.isActive(itenName))
+                    if (!menuController.isActive(itemName))
                       Flexible(
                         child: CustomText(
-                          text: itenName,
-                          color: menuController.isHovering(itenName)
+                          text: itemName,
+                          color: menuController.isHovering(itemName)
                               ? darke
                               : lightGrey,
                         ),
@@ -61,7 +61,7 @@ class VerticalMenuItem extends StatelessWidget {
                     else
                       Flexible(
                         child: CustomText(
-                          text: itenName,
+                          text: itemName,
                           color: darke,
                           size: 18,
                           weight: FontWeight.bold,
