@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_dashboard/cintrollers/menu_countroller.dart';
 import 'package:flutter_web_dashboard/layout.dart';
 import 'package:flutter_web_dashboard/screens/home.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  Get.put(MenuController());
   runApp(const MyApp());
 }
 
