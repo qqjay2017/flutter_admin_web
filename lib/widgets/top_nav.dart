@@ -7,7 +7,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
     AppBar(
       elevation: 0,
       iconTheme: IconThemeData(color: darke),
-      backgroundColor: light,
+      backgroundColor: Colors.transparent,
       // backgroundColor: Colors.white,
       leading: !ResponsiveWidget.isSmallScreen(context)
           ? Row(
